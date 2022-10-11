@@ -2,13 +2,15 @@ body {
   background-color: pink;
 }
 
-.header {
+.mainheader {
+  color: white;
+  font-size: 60pt;
+}
+
+.header, .subheader, .list {
   color: rgb(246, 123, 143);
 }
 
-.subheader {
-  color:rgb(246, 123, 143);
-}
 
 
 button {
