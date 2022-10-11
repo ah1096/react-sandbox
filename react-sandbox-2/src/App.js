@@ -118,7 +118,12 @@ function MakeAList() {
   const things = [
     {title: 'creating and nesting components', isLast: false, id: 1},
     {title: 'adding classes and styles', isLast: false, id: 2},
-    {title: 'displaying data', isLast: true, id: 3}
+    {title: 'displaying data', isLast: false, id: 3},
+    {title: 'responding to events', isLast: false, id: 4},
+    {title: 'updating the screen', isLast: false, id: 5},
+    {title: 'using hooks', isLast: false, id: 6},
+    {title: 'sharing data between components', isLast: true, id: 7}
+    
   ];
   
   const listItems = things.map(thing =>
