@@ -18,6 +18,45 @@ const [count, setCount] = useState(0);
   );
 }
 
+function TwinButton() {
+    return (
+      <button onClick={handleClick}>
+        clicked {count} times
+        </button>
+    );
+  }
+
+//I can make two components share data and always update together
+
+function TwinButtons() {
+
+  const [count, setCount] = useState(0);
+  
+    function handleClick() {
+      setCount(count + 1);
+    }
+
+    function TwinButton({ count, onClick}) {
+      return (
+        <button onClick={onClick}>
+          clicked {count} times
+          </button>
+      );
+    }
+
+  return (
+    <>
+  <h1 className="header">these buttons update at the same time. try clicking them, too.</h1>
+        <TwinButton count={count} onClick={handleClick}/>
+        <TwinButton count={count} onClick={handleClick}/>
+    </>
+  )
+}
+
+
+
+
+
 
 //I can add classNames to add CSS to elements
 export default function MyApp(){
@@ -26,9 +65,10 @@ export default function MyApp(){
       <h1 className="mainheader">insert title here</h1>
       <p className="subheader">this app was coded using React. here are some things I learned about from the React Quick Start tutorial:</p>
         <MakeAList />
-      <h1 className="header">click these buttons</h1>
+      <h1 className="header">these buttons update independently. try clicking them.</h1>
         <MyButton />
         <MyButton />
+      <TwinButtons />   
       <Profile />
     </div>
   )
@@ -93,6 +133,9 @@ function MakeAList() {
     <ul className="list">{listItems}</ul>
   );
   }
+
+//I can use a hook?
+
 
 
 
